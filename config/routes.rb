@@ -175,7 +175,8 @@ Joinplato::Application.routes.draw do
   devise_for :users
 
   # Back-office for candidates
-  namespace 'backoffice' do
+  namespace :backoffice do
+    root to: 'dashboard#index'
     resources :candidacies
   end
 
