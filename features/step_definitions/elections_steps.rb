@@ -5,11 +5,11 @@ Given /^I am on the elections page$/ do
 end
 
 Given /^There is a published election$/ do
-  @election = Factory :election, published: true
+  @election = FactoryGirl.create :election, published: true
 end
 
 Given /^There is an unpublished election$/ do
-  @election = Factory :election, published: false
+  @election = FactoryGirl.create :election, published: false
 end
 
 Then /^The election shoud be unpublished$/ do
@@ -27,5 +27,5 @@ Then /^An election with the name "([^"]*)" should be registred$/ do |name|
 end
 
 Given /^There is a election with the name "([^"]*)"$/ do |election_name|
-  @election = Factory :election, name: election_name
+  @election = FactoryGirl.create :election, name: election_name
 end
