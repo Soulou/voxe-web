@@ -29,6 +29,7 @@ group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'cucumber-rails'
+  gem 'capybara', '~> 2.0.3'
   gem 'capybara-webkit'
   gem 'factory_girl_rails'
 end
