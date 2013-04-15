@@ -26,6 +26,6 @@ Then /^An election with the name "([^"]*)" should be registred$/ do |name|
   Election.where(name: name).count.should >= 1
 end
 
-Given /^There is a election with the name "([^"]*)"$/ do |election_name|
+Given /^There is an election with the name "([^"]*)"$/ do |election_name|
   @election = FactoryGirl.create :election, name: election_name
 end
