@@ -10,5 +10,5 @@ Feature: BACKOFFICE Rename election
     When I click on "Renommer" button
     And I fill the "electionName" text field with "name 2"
     And I click on "Renommer !" button
-    Then I shoud see "name 2" on the page
+    Then I should see "name 2" on the page
     And An election with the name "name 2" should be registred

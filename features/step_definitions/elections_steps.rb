@@ -12,12 +12,12 @@ Given /^There is an unpublished election$/ do
   @election = FactoryGirl.create :election, published: false
 end
 
-Then /^The election shoud be unpublished$/ do
+Then /^The election should be unpublished$/ do
   @election.reload
   @election.published.should be false
 end
 
-Then /^The election shoud be published$/ do
+Then /^The election should be published$/ do
   @election.reload
   @election.published.should be true
 end
