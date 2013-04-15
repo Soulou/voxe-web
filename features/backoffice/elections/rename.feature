@@ -5,7 +5,7 @@ Feature: BACKOFFICE Rename election
 
   @javascript
   Scenario:
-    Given There is a election with the name "name 1"
+    Given There is an election with the name "name 1"
     And I am on the elections page
     When I click on "Renommer" button
     And I fill the "electionName" text field with "name 2"
