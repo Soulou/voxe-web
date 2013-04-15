@@ -29,3 +29,8 @@ end
 Given /^There is an election with the name "([^"]*)"$/ do |election_name|
   @election = FactoryGirl.create :election, name: election_name
 end
+
+Given /^There is an election in "(.*?)" with the name "(.*?)"$/ do |country, election_name|
+  @country = Country.where(name: "country").first
+  @election = FactoryGirl.create :election, country: @country, name: election_name
+end
