@@ -31,7 +31,9 @@ group :test do
   gem 'cucumber-rails'
   gem 'capybara', '~> 2.0.3'
   gem 'capybara-webkit'
+  gem 'capybara-screenshot'
   gem 'factory_girl_rails'
+  gem 'pry-rails'
 end
 
 # debugging tools
