@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+require 'capybara-screenshot/cucumber'
 require 'set'
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In

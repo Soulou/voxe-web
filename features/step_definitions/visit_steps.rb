@@ -1,7 +1,7 @@
 Then /^I should see all the coutries$/ do
-  @countrie_names = Set.new Country.all.map { |c| c.name }
-  @html_countrie_names = Set.new page.all("div.country").map { |c| c.text }
-  @countrie_names.subset?(@html_countrie_names).should == true
+  @country_names = Set.new Country.all.map { |c| c.name }
+  @html_country_names = Set.new page.all("div.country").map { |c| c.text }
+  @country_names.subset?(@html_country_names).should == true
 end
 
 Then /^I should see the elections of "(.*?)"$/ do |country|
