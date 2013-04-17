@@ -1,17 +1,19 @@
 FactoryGirl.define do
-  factory :candidacy do
-    after(:create) do |candidacy|
-      organization = FactoryGirl.build(:organization)
-      organization.candidacies = [candidacy]
-      organization.save!
-      10.times do
-        proposition = FactoryGirl.build(:proposition)
-        proposition.candidacy = candidacy
-        proposition.save!
-      end
-      candidate = FactoryGirl.build(:candidate)
-      candidate.candidacies = [candidacy]
-      candidate.save!
+  factory :candidacy do 
+  end
+  factory :candidacy_with_propositions, parent: :candidacy do
+    after(:create) do
+      propositions FactoryGirl.create_list :proposition, 10
+    end
+  end
+  factory :candidacy_with_candidate, parent: :candidacy do
+    after(:create) do
+      candidates [ FactoryGirl.create(:candidate) ]
+    end
+  end
+  factory :candidacy_with_organization, parent: :candidacy do
+    after(:create) do
+      organization FactoryGirl.create :organization
     end
   end
 end
