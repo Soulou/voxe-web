@@ -29,6 +29,9 @@ When /^I click on the election "(.*?)"$/ do |election|
   page.all("div.election").each do |election_div|
     if election_div.text == election
       election_div.click
+      sleep 2
+      require 'pry'
+      binding.pry
     end
   end
 end

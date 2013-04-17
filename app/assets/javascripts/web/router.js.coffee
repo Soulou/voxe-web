@@ -42,7 +42,9 @@ class window.AppRouter extends Backbone.Router
       election = _.find app.collections.elections.models, (election) ->
         election.namespace() == namespace
       app.models.election.set id: election.id
-      
+      console.log("Change election ID")
+    
+    console.log("We scroll to candidacies (router)")
     app.views.application.scrollTo $('#candidacies').offset().top
     
   tagsList: (namespace, names)->
