@@ -1,16 +1,19 @@
 FactoryGirl.define do
-  factory :candidacy do
-    ignore do
-      propositions_count 10
-      candidates_count 1
+  factory :candidacy do 
+  end
+  factory :candidacy_with_propositions, parent: :candidacy do
+    after(:create) do
+      propositions FactoryGirl.create_list :proposition, 10
     end
-
-    association :election
-    association :organization
-
-    before(:create) do |candidacy, evaluator|
-      FactoryGirl.create_list(:proposition, evaluator.propositions_count, candidacy: candidacy)
-      FactoryGirl.create_list(:candidate, evaluator.candidates_count, candidacies: [candidacy])
+  end
+  factory :candidacy_with_candidate, parent: :candidacy do
+    after(:create) do
+      candidates [ FactoryGirl.create(:candidate) ]
+    end
+  end
+  factory :candidacy_with_organization, parent: :candidacy do
+    after(:create) do
+      organization FactoryGirl.create :organization
     end
   end
 end
