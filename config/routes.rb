@@ -178,8 +178,7 @@ Joinplato::Application.routes.draw do
   namespace :backoffice do
     root to: 'dashboard#index'
     resources :candidacies
-    resource :candidate, path: 'my_profile'
-    match 'my_profile' => 'candidates#edit'
+    resource :my_profile
   end
 
   # all platforms
