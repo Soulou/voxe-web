@@ -85,6 +85,7 @@ gem 'haml_coffee_assets'
 gem 'eco'
 gem 'mustache-trimmer', :git => 'https://github.com/josh/mustache-trimmer.git'
 gem 'simple_form'
+gem 'select2-rails'
 
 # http://voxe.airbrake.io/
 gem "airbrake"
@@ -112,3 +113,6 @@ gem 'mongoid_fulltext'
 
 # Internationalization according to http accept-language
 gem 'http_accept_language'
+
+# Gem to get rails variables in js
+gem 'gon'
